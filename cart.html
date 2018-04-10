@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart_style.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container_shoping">
+    <div class="product_details">
+        <p>Product Details</p>
+        <p>unite Price</p>
+        <p>Quantity</p>
+        <p>shipping</p>
+        <p>subtotal</p>
+        <p>action</p>
+    </div>
+    <div class="catalog_mango">
+        <div class="catalog__mango--img"><img src="img2/Layer1.png" alt="Mango people T-shirt"></div>
+        <div class="catalog__mango_box">
+            <p>Mango people T-shirt</p>
+            <div class="catalog__mango_inner-text">
+                <div><span>Color:</span>
+                    <div class="selection__type selection__type_color">
+                        <div class="selection__option selection__option_selected">Red</div>
+                        <div class="selection__option">Green</div>
+                        <div class="selection__option">Blue</div>
+                    </div>
+                </div>
+                <div><span>Size:</span>
+                    <div class="selection__type selection__type_size">
+                        <div class="selection__option selection__option_selected">XXL</div>
+                        <div class="selection__option">XL</div>
+                        <div class="selection__option">L</div>
+                        <div class="selection__option">M</div>
+                        <div class="selection__option">S</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="catalog__mango--items price" data-id="1" data-price="52.00">$52.00</div>
+        <div class="catalog__mango--items">
+            <input class="value" type="number" name="quantity" value="1" min="1" data-id="102"></div>
+        <div class="catalog__mango--items">FREE</div>
+        <div class="catalog__mango--items count">$300</div>
+        <div class="catalog__mango--items"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+    </div>
+    <div class="catalog_mango">
+        <div class="catalog__mango--img"><img src="img2/Layer2.png" alt="Mango people T-shirt"></div>
+        <div class="catalog__mango_box">
+            <p>Mango people T-shirt</p>
+            <div class="catalog__mango_inner-text">
+
+                <div><span>Color:</span>
+                    <div class="selection__type selection__type_color">
+                        <div class="selection__option selection__option_selected">Red</div>
+                        <div class="selection__option">Green</div>
+                        <div class="selection__option">Blue</div>
+                    </div>
+                </div>
+
+                <div><span>Size:</span>
+                    <div class="selection__type selection__type_size">
+                        <div class="selection__option selection__option_selected">XXL</div>
+                        <div class="selection__option">XL</div>
+                        <div class="selection__option">L</div>
+                        <div class="selection__option">M</div>
+                        <div class="selection__option">S</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="catalog__mango--items price" data-id="2" data-price="52.00">$52.00</div>
+        <div class="catalog__mango--items"><input class="value" type="number" name="quantity" value="1" min="1" data-id="101"></div>
+        <div class="catalog__mango--items">FREE</div>
+        <div class="catalog__mango--items count">$300</div>
+        <div class="catalog__mango--items"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+    </div>
+
+    <div class="catalog_mango">
+        <div class="catalog__mango--img"><img src="img2/Layer8.png" alt="Mango people T-shirt"></div>
+        <div class="catalog__mango_box">
+            <p>Mango people T-shirt</p>
+            <div class="catalog__mango_inner-text">
+                <div><span>Color:</span>
+                    <div class="selection__type selection__type_color">
+                        <div class="selection__option selection__option_selected">Red</div>
+                        <div class="selection__option">Green</div>
+                        <div class="selection__option">Blue</div>
+                    </div>
+                </div>
+                <div><span>Size:</span>
+                    <div class="selection__type selection__type_size">
+                        <div class="selection__option selection__option_selected">XXL</div>
+                        <div class="selection__option">XL</div>
+                        <div class="selection__option">L</div>
+                        <div class="selection__option">M</div>
+                        <div class="selection__option">S</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="catalog__mango--items price" data-id="8" data-price="52.00">$52.00</div>
+        <div class="catalog__mango--items"><input class="value" type="number" name="quantity" value="1" min="1" data-id="100"></div>
+        <div class="catalog__mango--items">FREE</div>
+        <div class="catalog__mango--items count">$300</div>
+        <div class="catalog__mango--items"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+    </div>
+    <script>
+        addSelect();
+
+        function addSelect() {
+            let select = document.querySelectorAll('.selection__type');
+            let options = [];
+
+
+            for (let i = 0; i < select.length; i++) {
+                select[i].onmouseover = showOptions;
+                select[i].onmouseout = hideOptions;
+                select[i].action = chooseOption;
+            }
+
+            function showOptions() {
+                options = this.querySelectorAll('.selection__option');
+                for (let i = 0; i < options.length; i++) {
+                    options[i].style.display = 'block';
+                }
+                this.action();
+            }
+
+            function hideOptions() {
+                options = this.querySelectorAll('.selection__option');
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].classList.contains('selection__option_selected')) continue;
+                    options[i].style.display = 'none';
+                }
+            }
+
+            function chooseOption() {
+                options = this.querySelectorAll('.selection__option');
+                for (let i = 0; i < options.length; i++) {
+                    options[i].addEventListener('click', function() {
+                        clr(options);
+                        options[i].classList.add('selection__option_selected');
+                        for (let j = 0; j < options.length; j++) {
+                            if (j === i) continue;
+                            options[j].style.display = 'none';
+                        }
+                    })
+                }
+            }
+
+            function clr(options) {
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].classList.contains('selection__option_selected')) {
+                        options[i].classList.remove('selection__option_selected');
+                    }
+                    continue;
+                }
+            }
+        }
+
+    </script>
+
+
+
+    <script>
+        const count = document.querySelector('.price').dataset.price; // цена товара
+        let value = document.querySelector('.value').value; // количество товара
+        value = parseFloat(value.replace(/\$/, "")); //берем только цифры, очки и запятые, окргуляем
+        const itemsCount1 = document.querySelector('.count');
+        itemsCount1.textContent = (count * value).toFixed(2);
+    </script>
+
+
+
+
+    <div class="shopping_bottom">
+        <div class="shopping_button1">
+            <button>CLEAR SHOPPING CART</button>
+        </div>
+        <div class="shopping_button2">
+            <button>CONTINUE SHOPPING</button>
+        </div>
+    </div>
+    <div class="shopping_form">
+        <div class="shopping--form1"><h3>
+            Shipping Adress</h3>
+            <select>
+                <option>Bangladesh</option>
+                <option>USA</option>
+                <option>UK</option>
+                <option>Canada</option>
+                <option>Ukraina</option>
+            </select>
+            <input type="text" placeholder="State"><input type="text" placeholder="Postcode / Zip">
+            <button>get a quote</button>
+        </div>
+        <div class="shopping--form2"><h3>Coupon discount</h3>
+            <p>Enter your coupon code if you have one</p><input type="text" placeholder="State">
+            <button>Apply coupon</button>
+        </div>
+        <div class="shopping--form3">
+            <div class="total"><p>Sub total &emsp;$900</p><h4>GRAND TOTAL&emsp; <span>$900</span></h4></div>
+            <div class="shopping--form3_proceed">
+                <button>proceed to checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

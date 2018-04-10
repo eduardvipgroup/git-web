@@ -1,0 +1,337 @@
+
+.selection__type {
+    color: #aaa;
+    position: relative;
+    cursor: pointer;
+}
+
+.selection__type:hover::after {
+    border-top-color: #ef5b70;
+}
+
+.selection__type::after {
+    content: '';
+    position: absolute;
+    top: 13px;
+    right: 5px;
+    height: 0;
+    width: 0;
+    border-top: 5px solid #aaa;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    transition: border-color .3s;
+}
+
+.selection__option {
+    position: relative;
+    padding: 5px 10px 5px 30px;
+    display: none;
+    background-color: #f4f4f4;
+
+}
+
+.selection__option:hover {
+    background-color: #ef5b70;
+
+}
+
+.selection__type_color .selection__option::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    top: calc(50% - 5px);
+    left: 10px;
+}
+
+.selection__type_color .selection__option:nth-child(1)::before {
+    background-color: #f00;
+}
+
+.selection__type_color .selection__option:nth-child(2)::before {
+    background-color: #0f0;
+}
+
+.selection__type_color .selection__option:nth-child(3)::before {
+    background-color: #00f;
+}
+
+.selection__option_selected {
+    display: block;
+}
+
+.item_text {
+    margin: 75px auto 0 auto;
+}
+
+.item_text p {
+    font-family: Lato;
+    color: #4d4d4d;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.item_mango {
+    display: flex;
+    justify-content: space-between;
+    margin: 75px auto 0 auto;
+    width: 1140px;
+}
+
+
+.container_shoping {
+    width: 1140px;
+    font-family: Lato;
+    margin: 40px auto;
+}
+.fa{
+    cursor: pointer;
+}
+.product_details {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.product_details p {
+    text-align: center;
+    text-transform: uppercase;
+    color: #222222;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    width: 137px;
+}
+
+.product_details p:nth-of-type(1) {
+    width: 400px;
+    text-align: left;
+}
+
+.catalog_mango {
+    height: 155px;
+    border-bottom: 1px solid #eaeaea;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog_mango:hover {
+    background-color: #f6f6f6;
+}
+
+.catalog_mango img {
+    height: 115px;
+    width: 100px;
+}
+
+.catalog_mango img:hover {
+    height: 280px;
+    width: 263px;
+    position: absolute;
+    transition: 2s ease;
+    z-index: 1;
+}
+
+.catalog__mango--img {
+    width: 100px;
+    display: block;
+}
+
+.catalog__mango_inner-text {
+    float: left;
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+
+.catalog__mango_box {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog__mango_box p {
+    margin-left: 5px;
+    font-family: Lato;
+    color: #575757;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.catalog__mango_box span {
+    margin-left: 5px;
+    color: #6f6e6e;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 20px;
+}
+
+.catalog__mango_box .selection__option {
+    width: 90px;
+    padding-left: 24px;
+}
+
+.catalog__mango_box .selection__type {
+    margin: 5px 10px 0 5px;
+}
+.catalog__mango_box .selection__option:hover{
+    background-color: #ffffff;
+}
+.catalog__mango--items {
+    width: 137px;
+    text-align: center;
+    line-height: 110px;
+    color: #656565;
+    font-size: 13px;
+}
+
+.catalog__mango--items:nth-of-type(7n) {
+    color: #c0c0c0;
+    font-size: 16px;
+}
+
+.catalog__mango--items p {
+    border: 1px solid #eaeaea;
+    width: 54px;
+    margin: auto;
+}
+
+.catalog__mango--items input {
+    width: 50px;
+    height: 30px;
+    outline: 0;
+    border: 1px solid #eaeaea;
+    background: #ffffff;
+    line-height: 30px;
+    text-align: center;
+    color: #656565;
+}
+
+.shopping_bottom {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin: 40px 0;
+
+}
+
+.shopping_button1 button,
+.shopping_button2 button {
+    width: 235px;
+    height: 50px;
+    border: 1px solid #eaeaea;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.shopping_button1 button:hover,
+.shopping_button2 button:hover {
+    background-color: #f16d7f;
+    color: #ffffff;
+}
+
+.shopping_form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping_form select,
+.shopping_form input {
+    border: 1px solid #eaeaea;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 355px;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.shopping_form input {
+    padding-left: 10px;
+}
+
+.shopping_form button {
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+    width: 118px;
+    height: 35px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.shopping_form button:hover {
+    background-color: #f16d7f;
+    color: #ffffff;
+}
+
+.shopping_form h3 {
+    text-transform: uppercase;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.shopping--form1 {
+    width: 360px;
+    height: 250px;
+}
+
+.shopping--form2 {
+    width: 360px;
+    height: 214px;
+}
+
+.shopping--form3 {
+    background-color: #f5f3f3;
+    width: 360px;
+    height: 214px;
+}
+
+.shopping--form3 .total {
+    padding: 20px 45px 10px 0;
+    border-bottom: 1px solid #e2e2e2;
+    text-align: right;
+}
+
+.shopping--form3 .total p {
+    text-transform: uppercase;
+    color: #4a4a4a;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.shopping--form3 .total h4 {
+    color: #222222;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.shopping--form3_proceed {
+    width: 273px;
+    height: 50px;
+    margin: 20px auto 0 auto;
+    top: 10px;
+    left: 0;
+}
+
+.shopping--form3 button {
+    background-color: #f16d7f;
+    color: #ffffff;
+    width: 273px;
+    height: 50px;
+    font-size: 16px;
+}
+
+.shopping--form3 button:hover {
+    background-color: #6f6e6e;
+    color: #ffffff;
+}

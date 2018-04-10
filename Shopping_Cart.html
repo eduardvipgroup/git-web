@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="webfonts/stylesheet.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/theme.css">
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+
+</head>
+<body>
+<header>
+    <div class="header_up">
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <a href="1_index.html">
+                    <div class="logo"><img src="img/logo.png" alt="The brand">
+                        <h1>BRAN<span>D</span></h1></div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">Browse<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu"><h4>WOMEN</h4>
+                                    <li><a href="">Dresses </a></li>
+                                    <li><a href="">Tops</a></li>
+                                    <li><a href="">Sweaters/Knits</a></li>
+                                    <li><a href="">Jackets/Coats</a></li>
+                                    <li><a href="">Blazers </a></li>
+                                    <li><a href="">Denim</a></li>
+                                    <li><a href="">Leggings/Pants</a></li>
+                                    <li><a href="">Skirts/Shorts</a></li>
+                                    <li><a href="">Accessories</a></li>
+                                    <li><a href="">Bags/Purses</a></li>
+                                    <li><a href="">Swimwear/Underwear</a></li>
+                                    <li><a href="">Nightwear</a></li>
+                                    <li><a href="">Shoes</a></li>
+                                    <li><a href="">Beauty</a></li>
+                                    <h4>MEN</h4>
+                                    <li><a href="">Tees/Tank tops</a></li>
+                                    <li><a href="">Shirts/Polos</a></li>
+                                    <li><a href="">Sweatshirts/Hoodiess</a></li>
+                                    <li><a href="">Blazers</a></li>
+                                    <li><a href="">Jackets/Vests</a></li>
+                                </ul>
+                            </div>
+                            <script>
+                                $(function () {
+                                    let availableTags = [
+                                        "Accessories",
+                                        "Bags",
+                                        "Blazers",
+                                        "Beauty",
+                                        "Dresses",
+                                        "Denim",
+                                        "Hoodies",
+                                        "Jackets",
+                                        "Leggings",
+                                        "Knits",
+                                        "Nightwear",
+                                        "Polos",
+                                        "Purses",
+                                        "Skirts",
+                                        "Shirts",
+                                        "Sweatshirts",
+                                        "Shoes",
+                                        "Swimwear",
+                                        "Tees",
+                                        "T-shirt",
+                                        "Tops",
+                                        "Underwear",
+                                        "Vests"
+                                    ];
+                                    $("#tags").autocomplete({
+                                        source: availableTags
+                                    });
+                                });
+                            </script>
+                            <div class="ui-widget">
+                                <input id="tags" type="text" class="form-control" placeholder="Search for Item...">
+                            </div>
+                            <span class="input-group-btn"><button class="btn btn-default" type="button"><i
+                                    class="fa fa-search" aria-hidden="true"></i></button></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md3-3">
+                <div class="button3">
+                    <div class="my_account_cart">
+
+                        <div class="my_account_cart_box">
+
+                        </div>
+
+                        <div class="my_account_cart_item_sum">
+                            <p>total</p>
+                            <p>$<span id="basket-price">0</span></p>
+                        </div>
+                        <div class="my_account_cart_item_button">
+                            <a href="Checkout.html">
+                                <button>checkout</button>
+                            </a>
+                            <a href="Shopping_Cart.html">
+                                <button>go to cart</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="basket-count">0</div>
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32px"
+                         height="38px" viewBox="0 0 32 38">
+                        <path fillRule="evenodd"
+                              d="M 31.9 7.56C 31.9 7.56 26.49 19.98 26.49 19.98 26.3 20.41 25.88 20.69 25.41 20.69 25.41 20.69 10.55 20.69 10.55 20.69 10.02 20.69 9.55 20.33 9.41 19.82 9.41 19.82 4.58 2.36 4.58 2.36 4.58 2.36 1.18 2.36 1.18 2.36 0.53 2.36-0 1.83-0 1.18-0 0.53 0.53-0 1.18-0 1.18-0 5.46-0 5.46-0 6-0 6.47 0.35 6.61 0.87 6.61 0.87 11.44 18.32 11.44 18.32 11.44 18.32 24.62 18.32 24.62 18.32 24.62 18.32 29 8.27 29 8.27 29 8.27 14.4 8.27 14.4 8.27 13.75 8.27 13.22 7.74 13.22 7.09 13.22 6.44 13.75 5.91 14.4 5.91 14.4 5.91 30.81 5.91 30.81 5.91 31.21 5.91 31.58 6.11 31.8 6.44 32.02 6.78 32.06 7.19 31.9 7.56ZM 9.43 23.64C 10.91 23.64 12.11 24.84 12.11 26.32 12.11 27.8 10.91 29 9.43 29 7.95 29 6.75 27.8 6.75 26.32 6.75 24.84 7.95 23.64 9.43 23.64ZM 26.02 23.64C 27.5 23.54 28.78 24.67 28.88 26.12 28.92 26.85 28.7 27.54 28.23 28.07 27.76 28.63 27.11 28.94 26.39 29 26.34 29 26.26 29 26.2 29 24.8 29 23.63 27.9 23.53 26.5 23.44 25.04 24.54 23.74 26.02 23.64Z"/>
+                    </svg>
+                </div>
+                <div class="my_account"><a href="Shopping_Cart.html">My Account</a></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <ul class="menu">
+            <li><a class="active-link-menu" href="1_index.html">HOME</a></li>
+            <li><a href="Product.html">MEN</a></li>
+            <li><a href="single.html">WOMEN</a>
+                <div class="mega">
+                    <div class="transform"></div>
+                    <div class="mega_1">
+                        <h4>WOMEN</h4>
+                        <ul>
+                            <li><a href="">Dresses </a></li>
+                            <li><a href="">Tops</a></li>
+                            <li><a href="">Sweaters/Knits</a></li>
+                            <li><a href="">Jackets/Coats</a></li>
+                            <li><a href="">Dresses </a></li>
+                            <li><a href="">Tops</a></li>
+                            <li><a href="">Sweaters/Knits</a></li>
+                            <li><a href="">Jackets/Coats</a></li>
+
+
+                        </ul>
+                    </div>
+                    <div class="mega_2">
+                        <h4>WOMEN</h4>
+                        <ul>
+                            <li><a href="">Dresses </a></li>
+                            <li><a href="">Tops</a></li>
+                            <li><a href="">Sweaters/Knits</a></li>
+                            <li><a href="">Jackets/Coats</a></li>
+                        </ul>
+                        <h4>WOMEN</h4>
+                        <ul>
+                            <li><a href="">Dresses </a></li>
+                            <li><a href="">Tops</a></li>
+                            <li><a href="">Sweaters/Knits</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="mega_3">
+                        <h4>WOMEN</h4>
+                        <ul>
+                            <li><a href="">Dresses </a></li>
+                            <li><a href="">Tops</a></li>
+                            <li><a href="">Sweaters/Knits</a></li>
+                            <li><a href="">Jackets/Coats</a></li>
+
+
+                        </ul>
+                        <div class="mega_1--photo">
+                            <img src="img/Layer%2042.png" alt="stile">
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+            <li><a href="#">KIDS</a></li>
+            <li><a href="#">ACCOSERIEDS</a></li>
+            <li><a href="#">FEATURED</a></li>
+            <li><a href="#">HOT DEALS</a></li>
+        </ul>
+    </div>
+
+    <div class="slider">
+        <div class="slider_photo">
+            <div class="slogan">
+                <h2><span>the brand</span><br>
+                    <span>of luxerious </span><span>fashion</span></h2></div>
+        </div>
+    </div>
+</header>
+<div class="container_shopping">
+    <div class="product_details">
+        <p>Product Details</p>
+        <p>unite Price</p>
+        <p>Quantity</p>
+        <p>shipping</p>
+        <p>subtotal</p>
+        <p>action</p>
+    </div>
+    <div class="catalog_mango">
+        <div class="catalog__mango--img"><img src="img2/Layer1.png" alt="Mango people T-shirt"></div>
+        <div class="catalog__mango_box">
+            <p>Mango people T-shirt</p>
+            <div class="catalog__mango_inner-text">
+                <div><span>Color:</span>
+                    <div class="selection__type selection__type_color">
+                        <div class="selection__option selection__option_selected">Red</div>
+                        <div class="selection__option">Green</div>
+                        <div class="selection__option">Blue</div>
+                    </div>
+                </div>
+                <div><span>Size:</span>
+                    <div class="selection__type selection__type_size">
+                        <div class="selection__option selection__option_selected">XXL</div>
+                        <div class="selection__option">XL</div>
+                        <div class="selection__option">L</div>
+                        <div class="selection__option">M</div>
+                        <div class="selection__option">S</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="catalog__mango--items price" data-id="1" data-price="52.00">$52.00</div>
+        <div class="catalog__mango--items">
+            <input class="value" type="number" name="quantity" value="1" min="1" data-id="102"></div>
+        <div class="catalog__mango--items">FREE</div>
+        <div class="catalog__mango--items count">$52.00</div>
+        <div class="catalog__mango--items"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+    </div>
+    <div class="catalog_mango">
+        <div class="catalog__mango--img"><img src="img2/Layer2.png" alt="Mango people T-shirt"></div>
+        <div class="catalog__mango_box">
+            <p>Mango people T-shirt</p>
+            <div class="catalog__mango_inner-text">
+
+                <div><span>Color:</span>
+                    <div class="selection__type selection__type_color">
+                        <div class="selection__option selection__option_selected">Red</div>
+                        <div class="selection__option">Green</div>
+                        <div class="selection__option">Blue</div>
+                    </div>
+                </div>
+
+                <div><span>Size:</span>
+                    <div class="selection__type selection__type_size">
+                        <div class="selection__option selection__option_selected">XXL</div>
+                        <div class="selection__option">XL</div>
+                        <div class="selection__option">L</div>
+                        <div class="selection__option">M</div>
+                        <div class="selection__option">S</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="catalog__mango--items price" data-id="2" data-price="52.99">$52.99</div>
+        <div class="catalog__mango--items"><input class="value" type="number" name="quantity" value="1" min="1"
+                                                  data-id="101"></div>
+        <div class="catalog__mango--items">FREE</div>
+        <div class="catalog__mango--items count">$52.99</div>
+        <div class="catalog__mango--items"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+    </div>
+
+    <div class="catalog_mango">
+        <div class="catalog__mango--img"><img src="img2/Layer8.png" alt="Mango people T-shirt"></div>
+        <div class="catalog__mango_box">
+            <p>Mango people T-shirt</p>
+            <div class="catalog__mango_inner-text">
+                <div><span>Color:</span>
+                    <div class="selection__type selection__type_color">
+                        <div class="selection__option selection__option_selected">Red</div>
+                        <div class="selection__option">Green</div>
+                        <div class="selection__option">Blue</div>
+                    </div>
+                </div>
+                <div><span>Size:</span>
+                    <div class="selection__type selection__type_size">
+                        <div class="selection__option selection__option_selected">XXL</div>
+                        <div class="selection__option">XL</div>
+                        <div class="selection__option">L</div>
+                        <div class="selection__option">M</div>
+                        <div class="selection__option">S</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="catalog__mango--items price" data-id="8" data-price="52.00">$52.00</div>
+        <div class="catalog__mango--items"><input class="value" type="number" name="quantity" value="1" min="1"
+                                                  data-id="100"></div>
+        <div class="catalog__mango--items">FREE</div>
+        <div class="catalog__mango--items count">$52.00</div>
+        <div class="catalog__mango--items"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+    </div>
+    <script>
+        addSelect();
+
+        function addSelect() {
+            let select = document.querySelectorAll('.selection__type');
+            let options = [];
+
+
+            for (let i = 0; i < select.length; i++) {
+                select[i].onmouseover = showOptions;
+                select[i].onmouseout = hideOptions;
+                select[i].action = chooseOption;
+            }
+
+            function showOptions() {
+                options = this.querySelectorAll('.selection__option');
+                for (let i = 0; i < options.length; i++) {
+                    options[i].style.display = 'block';
+                }
+                this.action();
+            }
+
+            function hideOptions() {
+                options = this.querySelectorAll('.selection__option');
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].classList.contains('selection__option_selected')) continue;
+                    options[i].style.display = 'none';
+                }
+            }
+
+            function chooseOption() {
+                options = this.querySelectorAll('.selection__option');
+                for (let i = 0; i < options.length; i++) {
+                    options[i].addEventListener('click', function () {
+                        clr(options);
+                        options[i].classList.add('selection__option_selected');
+                        for (let j = 0; j < options.length; j++) {
+                            if (j === i) continue;
+                            options[j].style.display = 'none';
+                        }
+                    })
+                }
+            }
+
+            function clr(options) {
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].classList.contains('selection__option_selected')) {
+                        options[i].classList.remove('selection__option_selected');
+                    }
+                    continue;
+                }
+            }
+        }
+
+    </script>
+
+    <div class="shopping_bottom">
+        <div class="shopping_button1">
+            <button class="clear_cart">CLEAR SHOPPING CART</button>
+        </div>
+        <div class="shopping_button2">
+            <a href="Product.html">
+                <button>CONTINUE SHOPPING</button>
+            </a>
+        </div>
+    </div>
+    <div class="shopping_form">
+        <div class="shopping--form1">
+            <h3>
+                Shipping Address</h3>
+            <select>
+                <option>Bangladesh</option>
+                <option>USA</option>
+                <option>UK</option>
+                <option>Canada</option>
+                <option>Ukraine</option>
+            </select>
+            <input type="text" placeholder="State"><input type="text" placeholder="Postcode / Zip">
+            <button>get a quote</button>
+        </div>
+        <div class="shopping--form2">
+            <h3>Coupon discount</h3>
+            <p>Enter your coupon code if you have one</p>
+            <input class="code_coupon" type="text" placeholder="Введите код купона - 123 и получите 10% скидки"
+                   value="">
+            <button id="coupon">Apply coupon</button>
+        </div>
+        <div class="shopping--form3">
+            <div class="total">
+                <p class="subtotal"></p>
+                <h4 class="grand_total"></h4>
+            </div>
+            <div class="shopping--form3_proceed">
+                <a href="Checkout.html">
+                    <button class="btn-total">proceed to checkout</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const inputs = document.getElementsByClassName('value');
+    const subTotal = document.querySelector('.subtotal');
+    const grandTotal = document.querySelector('.grand_total');
+    const containerShopping = document.querySelector('.container_shopping');
+    const clearBlock = document.querySelector('.clear_cart');
+    const firstBottom = document.querySelector('.shopping_bottom');
+    const subBlock = document.createElement('div');
+
+    for (let i = 0, len = inputs.length; i < len; i++) {
+        inputs[i].addEventListener('input', handler);
+    }
+    handler();
+
+    function handler() {
+        const block = document.querySelectorAll('.catalog_mango');
+        let totalPrice = 0;
+        for (let i = 0; i < block.length; i++) {
+            let priceEl = +block[i].querySelector('.price').dataset.price,
+                countEl = +block[i].querySelector('.value').value,
+                sum1 = block[i].querySelector('.count'),
+                subPrice = 0;
+
+            subPrice = +priceEl * +countEl;
+            totalPrice += subPrice;
+            sum1.textContent = '$' + subPrice;
+        }
+
+        subTotal.innerText = "SUB TOTAL " + "$" + totalPrice.toFixed(2);
+
+        grandTotal.innerText = "GRAND TOTAL " + " $" + totalPrice.toFixed(2);
+
+        const del = document.querySelectorAll('.fa');
+        for (let i = 0, len = del.length; i < len; i++) {
+            del[i].addEventListener('click', action);
+        }
+
+        function action() {
+            let parent = this.parentElement.parentElement;
+            parent.remove();
+            handler();
+        }
+
+        coupon.onclick = function () {
+            let input = document.querySelector('.code_coupon').value;
+            console.log(input);
+            if (input === '123') {
+                grandTotal.innerText = "GRAND TOTAL " + (totalPrice * 0.9).toFixed(2);
+            }
+        };
+    }
+
+        clearBlock.addEventListener('click', function () {
+            const block = document.querySelectorAll('.catalog_mango');
+            for (let i = 0, len = block.length; i < len; i++) {
+                block[i].remove();
+
+            }
+
+            console.log(subBlock);
+            subBlock.innerText = "The cart is empty!";
+            containerShopping.insertBefore(subBlock, firstBottom);
+            subBlock.style.cssText = "color: #f16d7f; \
+                     background-color: #eaeaea; \
+                      font-family: Lato; \
+                      font-size: 22px;  \
+                      padding: 30px;   \
+                       text-align: center; \ ";
+            subTotal.innerText = "SUB TOTAL " + "$" + "0";
+            grandTotal.innerText = "GRAND TOTAL " + " $" + "0";
+            document.querySelector('.code_coupon').readOnly = true;
+            coupon.disabled = true;
+
+        });
+
+</script>
+<footer>
+
+    <div class="fone2"><img src="img/Layer%2041.png">
+        <div class="phrase">
+            <div class="face"><img src="img/face.png">
+                <div class="face_text">
+                    <p>"Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum a. Aliguam
+                        condimentum mattis negue sed pretium"</p>
+                    <p>Bin Burhan</p>
+                    <p>Dhaka, Bd</p>
+                    <div class="liner">
+                        <div class="liner1"></div>
+                        <div class="liner2"></div>
+                        <div class="liner3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="subscibe">Subscribe
+                <br><span>FOR OUR NEWLETTER AND PROMOTION</span>
+                <form action="">
+                    <input type="search" class="b1" placeholder="Enter Your Email">
+                    <input type="submit" class="b2" value="Subscribe">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer_up">
+        <div class="Logo_copy">
+            <div class="logo"><img src="img/logo.png" alt="The brand">
+                <h1>BRAN<span>D</span></h1></div>
+            <p>Objectively transition extensive data rather than cross functional
+                solutions. Monotonectelly syndicate multidisciplinary materials before go forward benefits. Intinsicly
+                syndicate an expanded array
+                of processes and cross-unit partnerships</p>
+        </div>
+        <div class="COMPANY">
+            <nav>
+                <ul class="name">COMPANY
+                    <li><a href="1_index.html">Home</a></li>
+                    <li><a href="Checkout.html">Shop</a></li>
+                    <li><a href="Checkout.html">About</a></li>
+                    <li><a href="Checkout.html">How It Works</a></li>
+                    <li><a href="Checkout.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="INFORMATION">
+            <nav>
+                <ul class="name">INFORMATION
+                    <li><a href="">Tearms & Condition</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">How to Buy</a></li>
+                    <li><a href="">How to Sell</a></li>
+                    <li><a href="">Promot</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="SHOP_CATEGORY">
+            <nav>
+                <ul class="name">SHOP &nbsp;CATEGORY
+                    <li><a href="">Men</a></li>
+                    <li><a href="">Women</a></li>
+                    <li><a href="">Child</a></li>
+                    <li><a href="">Apparel</a></li>
+                    <li><a href="">Brows All</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="footer_down">
+        <div class="footer_text"> © 2017 Brand All Rights Reserved.</div>
+        <div class="footer_socyti">
+            <a href="#">
+                <div class="socyti"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+            </a>
+            <a href="#">
+                <div class="socyti"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+            </a>
+            <a href="">
+                <div class="socyti"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+            </a>
+            <a href="">
+                <div class="socyti"><i class="fa fa-pinterest-p" aria-hidden="true"></i></div>
+            </a>
+            <a href="">
+                <div class="socyti"><i class="fa fa-google-plus" aria-hidden="true"></i></div>
+            </a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
